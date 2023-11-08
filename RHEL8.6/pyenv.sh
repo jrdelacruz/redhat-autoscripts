@@ -45,5 +45,5 @@ if [ -f ~/.bash_profile ]; then
 fi
 
 # Install the Prerequisites Packages
-sudo dnf groupinstall "Development Tools" --releasever=8.6
-sudo dnf install bzip2-devel ncurses-devel readline-devel openssl-devel sqlite-devel --releasever=8.6
+sudo dnf groupinstall -y "Development Tools" --releasever=8.6
+sudo dnf install -y bzip2-devel ncurses-devel readline-devel openssl-devel sqlite-devel --releasever=8.6

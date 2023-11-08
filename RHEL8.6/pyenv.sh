@@ -14,10 +14,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Check if the script is running as root (EUID 0)
-if [ "$EUID" -ne 0 ]; then
-  echo "This script requires root privileges. Please run it as root or with sudo."
-  exit 1
+# Run a harmless command with sudo to test sudo access
+sudo -n true 2>/dev/null
+
+# Check if user has a sudo access
+if [ $? -ne 0 ]; then
+    echo "This script requires user with sudo access."
 fi
 
 # Clone PyEnv Repository to ~/.pyenv

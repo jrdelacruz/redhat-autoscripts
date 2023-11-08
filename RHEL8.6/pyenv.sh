@@ -46,6 +46,8 @@ if [ -f ~/.bash_profile ]; then
   echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
 fi
 
+exec "$SHELL"
+
 # Install the Prerequisites Packages
 sudo dnf groupinstall -y "Development Tools" --releasever=8.6
 sudo dnf install -y bzip2-devel ncurses-devel readline-devel openssl-devel sqlite-devel --releasever=8.6
